@@ -2,11 +2,11 @@ import torch
 from torchvision.models import efficientnet_b3
 from PIL import Image
 import io
-from .utils import img_transform
+from src.utils import img_transform
 
 # Model configuration
 class_names = ['glioma_tumor', 'meningioma_tumor', 'no_tumor', 'pituitary_tumor']
-model_path = "Tumor/models/Eff_net_b3_01_brain_tumor.pth"
+model_path = "models/Eff_net_b3_01_brain_tumor.pth"
 
 # Load model
 def load_model():
