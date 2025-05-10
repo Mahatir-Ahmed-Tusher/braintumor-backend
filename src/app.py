@@ -1,7 +1,7 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from .inference import predict_tumor
+from src.inference import predict_tumor
 import logging
 import os
 
@@ -53,7 +53,7 @@ async def custom_cors_middleware(request, call_next):
 # Health check endpoint
 @app.get("/health")
 async def health_check():
-    model_path = os.path.join("Tumor", "models", "Eff_net_b3_01_brain_tumor.pth")
+    model_path = os.path.join("models", "Eff_net_b3_01_brain_tumor.pth")
     return {
         "status": "healthy",
         "version": app.version,
